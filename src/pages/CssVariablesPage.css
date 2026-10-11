@@ -2,7 +2,45 @@
   min-height: 100vh;
 }
 
-.header {
+/* 기본 테마: Light */
+.css-variables-page {
+  color-scheme: light;
+
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --text: #182230;
+  --muted: #667085;
+  --border: #e4e7ec;
+  --accent: #2563eb;
+  --accent-text: #ffffff;
+  --hover: #f2f4f7;
+  --success: #15803d;
+
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+/* Dark 테마 */
+.css-variables-page[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+  --accent: #3b82f6;
+  --accent-text: #ffffff;
+  --hover: #334155;
+  --success: #4ade80;
+}
+
+.css-variables-page .header {
   height: 76px;
   padding: 0 40px;
   display: flex;
@@ -27,7 +65,7 @@
   padding: 9px 14px;
 }
 
-.container {
+.css-variables-page .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 48px 24px;
