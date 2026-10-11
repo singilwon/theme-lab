@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { useTheme } from "../hooks/useTheme";
 import "./CssVariablesPage.css";
 
-type Theme = "light" | "dark";
 type Filter = "all" | "published" | "draft";
 
 type ContentItem = {
@@ -22,17 +22,7 @@ const filters: { value: Filter; label: string }[] = [
 ];
 
 function CssVariablesPage() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem("content-theme");
-
-    if (saved === "light" || saved === "dark") {
-      return saved;
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
+  const { theme, toggleTheme } = useTheme("content-theme");
 
   const [contents, setContents] = useState<ContentItem[]>(() => {
     try {
@@ -65,16 +55,8 @@ function CssVariablesPage() {
   const [filter, setFilter] = useState<Filter>("all");
 
   useEffect(() => {
-    localStorage.setItem("content-theme", theme);
-  }, [theme]);
-
-  useEffect(() => {
     localStorage.setItem("content-items", JSON.stringify(contents));
   }, [contents]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
 
   const addContent = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
