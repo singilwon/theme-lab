@@ -2,17 +2,8 @@ import { Routes, Route, Link } from "react-router";
 import HomePage from "./pages/HomePage";
 import CssVariablesPage from "./pages/CssVariablesPage";
 import TailwindPage from "./pages/TailwindPage";
+import ThemeProviderPage from "./pages/ThemeProviderPage";
 import "./App.css";
-
-function ComingSoon({ title }: { title: string }) {
-  return (
-    <main className="coming-soon">
-      <h1>{title}</h1>
-      <p>현재 준비 중인 페이지입니다.</p>
-      <Link to="/">홈으로 돌아가기</Link>
-    </main>
-  );
-}
 
 function App() {
   return (
@@ -32,10 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/css-variables" element={<CssVariablesPage />} />
         <Route path="/tailwind" element={<TailwindPage />} />
-        <Route
-          path="/theme-provider"
-          element={<ComingSoon title="ThemeProvider" />}
-        />
+        <Route path="/theme-provider" element={<ThemeProviderPage />} />
       </Routes>
     </>
   );
