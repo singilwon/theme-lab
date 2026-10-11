@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router";
 import HomePage from "./pages/HomePage";
 import CssVariablesPage from "./pages/CssVariablesPage";
+import TailwindPage from "./pages/TailwindPage";
 import "./App.css";
 
 function ComingSoon({ title }: { title: string }) {
@@ -30,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/css-variables" element={<CssVariablesPage />} />
-        <Route path="/tailwind" element={<ComingSoon title="Tailwind CSS" />} />
+        <Route path="/tailwind" element={<TailwindPage />} />
         <Route
           path="/theme-provider"
           element={<ComingSoon title="ThemeProvider" />}
