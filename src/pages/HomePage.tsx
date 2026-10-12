@@ -37,6 +37,38 @@ function HomePage() {
         </p>
       </section>
 
+      <section className="lab-comparison">
+        <span className="lab-kicker">COMPARISON</span>
+        <h2>Implementation Comparison</h2>
+        <p>세 가지 다크모드 구현 방식의 차이를 비교합니다.</p>
+
+        <div className="lab-comparison-list">
+          <div className="lab-comparison-item">
+            <div>
+              <h3>CSS Variables</h3>
+              <p>CSS 변수와 data-theme을 활용한 테마 전환</p>
+            </div>
+            <code>data-theme</code>
+          </div>
+
+          <div className="lab-comparison-item">
+            <div>
+              <h3>Tailwind CSS</h3>
+              <p>dark: 유틸리티를 활용한 조건부 스타일 적용</p>
+            </div>
+            <code>dark:</code>
+          </div>
+
+          <div className="lab-comparison-item">
+            <div>
+              <h3>ThemeProvider</h3>
+              <p>테마 객체를 전달하여 컴포넌트 스타일 변경</p>
+            </div>
+            <code>theme object</code>
+          </div>
+        </div>
+      </section>
+
       <section className="experiments">
         <h2>Experiments</h2>
 
