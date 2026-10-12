@@ -50,7 +50,6 @@ styled-components의 ThemeProvider 기반 다크모드
 ## 실행 방법
 
 npm install
-
 npm run dev
 
 ## 구현 방식 비교
@@ -68,4 +67,3 @@ npm run dev
 
 또한 공통 테마 로직을 커스텀 훅으로 분리하고,
 페이지별 스타일 적용 범위를 구분했습니다.
-```
